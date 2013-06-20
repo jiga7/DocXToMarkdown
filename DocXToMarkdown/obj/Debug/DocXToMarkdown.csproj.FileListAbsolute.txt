@@ -1,0 +1,9 @@
+c:\users\mateuszw\documents\visual studio 2012\Projects\DocXToMarkdown\DocXToMarkdown\bin\Debug\DocXToMarkdown.exe
+c:\users\mateuszw\documents\visual studio 2012\Projects\DocXToMarkdown\DocXToMarkdown\bin\Debug\DocXToMarkdown.pdb
+c:\users\mateuszw\documents\visual studio 2012\Projects\DocXToMarkdown\DocXToMarkdown\bin\Debug\DocX.dll
+c:\users\mateuszw\documents\visual studio 2012\Projects\DocXToMarkdown\DocXToMarkdown\obj\Debug\DocXToMarkdown.csprojResolveAssemblyReference.cache
+c:\users\mateuszw\documents\visual studio 2012\Projects\DocXToMarkdown\DocXToMarkdown\obj\Debug\DocXToMarkdown.exe
+c:\users\mateuszw\documents\visual studio 2012\Projects\DocXToMarkdown\DocXToMarkdown\obj\Debug\DocXToMarkdown.pdb
+C:\Users\MateuszW\Documents\Visual Studio 2012\Projects\DocXToMarkdown\DocXToMarkdown\bin\Debug\Configuration\pl.json
+C:\Users\MateuszW\Documents\Visual Studio 2012\Projects\DocXToMarkdown\DocXToMarkdown\bin\Debug\Newtonsoft.Json.dll
+C:\Users\MateuszW\Documents\Visual Studio 2012\Projects\DocXToMarkdown\DocXToMarkdown\bin\Debug\Newtonsoft.Json.xml
