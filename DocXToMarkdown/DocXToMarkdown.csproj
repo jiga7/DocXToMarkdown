@@ -56,6 +56,7 @@
     <Compile Include="Converter\Header3.cs" />
     <Compile Include="Converter\Header2.cs" />
     <Compile Include="Converter\Header1.cs" />
+    <Compile Include="DocumentAnalyzer.cs" />
     <Compile Include="ParagraphConverter.cs" />
     <Compile Include="Parser\DocXParser.cs" />
     <Compile Include="Program.cs" />
