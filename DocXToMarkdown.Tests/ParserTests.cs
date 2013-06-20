@@ -20,8 +20,8 @@ namespace DocXToMarkdown.Tests {
 
     [Fact]
     public void Headers_ShouldProperParseHeaders() {
-      var result = DocXParser.Parse( @"./docx/headers.docx" );
-      Assert.Equal( File.ReadAllText( @"./md/headers.md" ), result );
+      var result = DocXParser.Parse( @"./docx/headers_and_paragraph.docx" );
+      Assert.Equal( File.ReadAllText( @"./md/headers_and_paragraph.md" ), result );
     }
 
     [Fact]

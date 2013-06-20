@@ -10,7 +10,7 @@ namespace DocXToMarkdown.Tests {
 
     [Fact]
     public void Converter_ShouldCreateHeader1ForGivenStyle() {
-      using( var doc = DocX.Load( "./docx/headers.docx" ) ) {
+      using( var doc = DocX.Load( "./docx/headers_and_paragraph.docx" ) ) {
         var result = ParagraphConverter.CreateForParagraph( doc.Paragraphs.First() );
         Assert.IsType<Header1>( result );
       }

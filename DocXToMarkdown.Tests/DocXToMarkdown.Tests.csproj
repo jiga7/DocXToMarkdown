@@ -65,8 +65,8 @@
     <Compile Include="ParagraphConverterTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="docx\headers.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="docx\headers_and_paragraph.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="docx\ordered_list.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -77,8 +77,8 @@
     <None Include="md\unordered_list.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="md\headers.md">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="md\headers_and_paragraph.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="md\ordered_list.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

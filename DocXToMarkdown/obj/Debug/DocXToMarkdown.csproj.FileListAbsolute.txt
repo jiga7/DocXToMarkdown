@@ -15,6 +15,5 @@ C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\bin\Debug
 C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\bin\Debug\DocX.pdb
 C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\bin\Debug\DocX.xml
 C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\obj\Debug\DocXToMarkdown.csprojResolveAssemblyReference.cache
 C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\obj\Debug\DocXToMarkdown.exe
 C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\obj\Debug\DocXToMarkdown.pdb
