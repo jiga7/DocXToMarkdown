@@ -7,3 +7,14 @@ c:\users\mateuszw\documents\visual studio 2012\Projects\DocXToMarkdown\DocXToMar
 C:\Users\MateuszW\Documents\Visual Studio 2012\Projects\DocXToMarkdown\DocXToMarkdown\bin\Debug\Configuration\pl.json
 C:\Users\MateuszW\Documents\Visual Studio 2012\Projects\DocXToMarkdown\DocXToMarkdown\bin\Debug\Newtonsoft.Json.dll
 C:\Users\MateuszW\Documents\Visual Studio 2012\Projects\DocXToMarkdown\DocXToMarkdown\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\bin\Debug\Configuration\pl.json
+C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\bin\Debug\DocXToMarkdown.exe
+C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\bin\Debug\DocXToMarkdown.pdb
+C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\bin\Debug\DocX.dll
+C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\bin\Debug\DocX.pdb
+C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\bin\Debug\DocX.xml
+C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\obj\Debug\DocXToMarkdown.csprojResolveAssemblyReference.cache
+C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\obj\Debug\DocXToMarkdown.exe
+C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown\obj\Debug\DocXToMarkdown.pdb

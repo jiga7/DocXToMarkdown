@@ -15,8 +15,18 @@ namespace DocXToMarkdown {
     }
 
     public static BaseConverter CreateForParagraph( Paragraph p ) {
+      var isList = p.IsListItem;
+      if( isList ) return createConverterForList( p );
+
       var type = Type.GetType( "DocXToMarkdown.Converter." + _converters[p.StyleName] );
       return (BaseConverter)Activator.CreateInstance( type, new [] { p } );
+    }
+
+    private static BaseConverter createConverterForList( Paragraph p ) {
+      if( p.ListItemType == ListItemType.Numbered )
+        return new OrderedList( p );
+      else return new UnorderedList( p );
+
     }
 
     private static readonly IDictionary<String, String> _converters;
