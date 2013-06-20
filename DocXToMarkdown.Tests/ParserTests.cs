@@ -26,8 +26,8 @@ namespace DocXToMarkdown.Tests {
 
     [Fact]
     public void List_ShouldProperParseOrderedList() {
-      var result = DocXParser.Parse( @"./docx/ordered_list.docx" );
-      Assert.Equal( File.ReadAllText( @"./md/ordered_list.md" ), result );
+      var result = DocXParser.Parse( @"./docx/ordered_list_and_link.docx" );
+      Assert.Equal( File.ReadAllText( @"./md/ordered_list_and_link.md" ), result );
     }
 
     [Fact]

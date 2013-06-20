@@ -68,8 +68,8 @@
     <None Include="docx\headers_and_paragraph.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="docx\ordered_list.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="docx\ordered_list_and_link.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="docx\unordered_list.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -80,8 +80,8 @@
     <None Include="md\headers_and_paragraph.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="md\ordered_list.md">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="md\ordered_list_and_link.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

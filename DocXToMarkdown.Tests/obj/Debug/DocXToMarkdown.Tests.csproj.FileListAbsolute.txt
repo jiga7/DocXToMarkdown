@@ -18,10 +18,10 @@ C:\Users\MateuszW\Documents\Visual Studio 2012\Projects\DocXToMarkdown\DocXToMar
 C:\Users\MateuszW\Documents\Visual Studio 2012\Projects\DocXToMarkdown\DocXToMarkdown.Tests\bin\Debug\docx\unordered_list.docx
 C:\Users\MateuszW\Documents\Visual Studio 2012\Projects\DocXToMarkdown\DocXToMarkdown.Tests\bin\Debug\md\unordered_list.md
 C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown.Tests\bin\Debug\Configuration\pl.json
-C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown.Tests\bin\Debug\docx\ordered_list.docx
+C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown.Tests\bin\Debug\docx\ordered_list_and_link.docx
 C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown.Tests\bin\Debug\docx\unordered_list.docx
 C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown.Tests\bin\Debug\md\unordered_list.md
-C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown.Tests\bin\Debug\md\ordered_list.md
+C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown.Tests\bin\Debug\md\ordered_list_and_link.md
 C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown.Tests\bin\Debug\docx\headers_and_paragraph.docx
 C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown.Tests\bin\Debug\md\headers_and_paragraph.md
 C:\Users\Mateusz.Wolsza\Documents\GitHub\DocXToMarkdown\DocXToMarkdown.Tests\bin\Debug\DocXToMarkdown.Tests.dll

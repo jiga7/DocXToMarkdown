@@ -8,7 +8,7 @@ namespace DocXToMarkdown.Converter {
     public Header2(Paragraph p ) : base( p )  { }
 
     public override string Convert() {
-      return "## " + _paragraph.Text + " ##"+ Environment.NewLine + Environment.NewLine;
+      return "## " + _text + " ##"+ Environment.NewLine + Environment.NewLine;
     }
 
   }

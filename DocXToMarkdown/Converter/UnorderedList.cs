@@ -8,7 +8,7 @@ namespace DocXToMarkdown.Converter {
     public OrderedList(Paragraph p ) : base( p )  { }
 
     public override string Convert() {
-      return "1. " + _paragraph.Text + Environment.NewLine;
+      return "1. " + _text + Environment.NewLine;
     }
 
   }

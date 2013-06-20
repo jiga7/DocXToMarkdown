@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Novacode;
 
 namespace DocXToMarkdown.Converter {
@@ -8,10 +9,11 @@ namespace DocXToMarkdown.Converter {
     public P(Paragraph p ) : base( p )  { }
 
     public override string Convert() {
-      if( String.IsNullOrWhiteSpace( _paragraph.Text ) ) return String.Empty;
-      return _paragraph.Text + Environment.NewLine + Environment.NewLine;
-    }
+      if( String.IsNullOrWhiteSpace( _text ) ) return String.Empty;
 
+      return _text + Environment.NewLine + Environment.NewLine;
+    }
+ 
   }
 
 }
