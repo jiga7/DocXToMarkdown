@@ -17,7 +17,7 @@ namespace DocXToMarkdown.Converter {
     private void CheckHiperlinks() {
       if( _paragraph.Hyperlinks.Count > 0 ) {
         var link = _paragraph.Hyperlinks.First();
-        _text = "[" + _text  + "](" + link.Uri.AbsoluteUri + ")";
+        if( link.Uri != null ) _text = "[" + _text  + "](" + link.Uri.AbsoluteUri + ")";
       }
     }
 
