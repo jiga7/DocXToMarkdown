@@ -28,7 +28,8 @@ namespace DocXToMarkdown {
 
       var json = JsonConvert.SerializeObject( analyzer.Result.ToDictionary( s => s, _ => String.Empty ), new JsonSerializerSettings { Formatting = Newtonsoft.Json.Formatting.Indented } );
       Console.WriteLine(json);
-      File.WriteAllText( "settings.json", json );
+      var file = Path.GetFileNameWithoutExtension( filename );
+      File.WriteAllText( file + ".json", json );
     }
 
   }
