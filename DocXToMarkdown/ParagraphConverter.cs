@@ -11,7 +11,7 @@ namespace DocXToMarkdown {
   public static class ParagraphConverter {
 
     static ParagraphConverter() {
-      _converters = JsonConvert.DeserializeObject<Dictionary<String, String>>( File.ReadAllText( @"./Configuration/pl.json" ) );
+      _converters = JsonConvert.DeserializeObject<Dictionary<String, String>>( File.ReadAllText( @"settings.json" ) );
     }
 
     public static BaseConverter CreateForParagraph( Paragraph p ) {
