@@ -1,21 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using DocXToMarkdown.Converter;
+using Newtonsoft.Json;
 using Novacode;
 
 namespace DocXToMarkdown.Parser {
 
-  public static class DocXParser {
+  public class DocXParser {
 
-    static DocXParser() {
+    public DocXParser( string filename ) {
+      _filename = filename;
+      var settings = Path.GetFileNameWithoutExtension( filename ) + ".json";
+      if( !File.Exists( settings ) ) settings = "settings.json";
+      _converters = JsonConvert.DeserializeObject<Dictionary<String, String>>( File.ReadAllText( settings ) );
     }
 
-    public static object Parse( string path ) {
-      if( String.IsNullOrWhiteSpace(path) ) return String.Empty;
+    public string Parse() {
+      if( String.IsNullOrWhiteSpace(_filename) ) return String.Empty;
 
       var sb = new StringBuilder();
-      using( var doc = DocX.Load( path ) ) {
+      using( var doc = DocX.Load( _filename ) ) {
         foreach( var paragraph in doc.Paragraphs ) {
           sb.Append( analyzeParagraph( paragraph ) );
         }
@@ -24,11 +31,28 @@ namespace DocXToMarkdown.Parser {
       return sb.ToString().TrimEnd();
     }
 
-    private static string analyzeParagraph( Paragraph paragraph ) {
-      var analyzer = ParagraphConverter.CreateForParagraph( paragraph );
+    private string analyzeParagraph( Paragraph paragraph ) {
+      var analyzer = createForParagraph( paragraph );
 
       return analyzer.Convert();
     }
+
+    private BaseConverter createForParagraph( Paragraph paragraph ) {
+      var isList = paragraph.IsListItem;
+      if( isList ) return createConverterForList( paragraph );
+
+      var type = Type.GetType( "DocXToMarkdown.Converter." + _converters[paragraph.StyleName] );
+      return (BaseConverter)Activator.CreateInstance( type, new[] { paragraph } );
+    }
+
+    private BaseConverter createConverterForList( Paragraph paragraph ) {
+      if( paragraph.ListItemType == ListItemType.Numbered )
+        return new OrderedList( paragraph );
+      else return new UnorderedList( paragraph ); 
+    }
+
+    private readonly string _filename;
+    private readonly IDictionary<String, String> _converters;
   }
 
 }

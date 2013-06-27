@@ -8,32 +8,33 @@ namespace DocXToMarkdown.Tests {
   public class ParserTests {
 
     [Fact]
-    public void Parser_ShouldExists() {
-      Assert.DoesNotThrow( () => DocXParser.Parse( String.Empty ) );
-    }
-
-    [Fact]
     public void Parser_ForEmptyFilenameShouldReturnEmptyResult() {
-      var result = DocXParser.Parse( String.Empty );
+      var parser = new DocXParser( String.Empty );
+      var result = parser.Parse();
       Assert.Equal( String.Empty, result );
     }
 
     [Fact]
     public void Headers_ShouldProperParseHeaders() {
-      var result = DocXParser.Parse( @"./docx/headers_and_paragraph.docx" );
+      var parser = new DocXParser( @"./docx/headers_and_paragraph.docx" );
+      var result = parser.Parse();
       Assert.Equal( File.ReadAllText( @"./md/headers_and_paragraph.md" ), result );
     }
 
     [Fact]
     public void List_ShouldProperParseOrderedList() {
-      var result = DocXParser.Parse( @"./docx/ordered_list_and_link.docx" );
+      var parser = new DocXParser( @"./docx/ordered_list_and_link.docx");
+      var result = parser.Parse();
       Assert.Equal( File.ReadAllText( @"./md/ordered_list_and_link.md" ), result );
     }
 
     [Fact]
     public void List_ShouldProperParseUnorderedList() {
-      var result = DocXParser.Parse( @"./docx/unordered_list.docx" );
+      var parser = new DocXParser( @"./docx/unordered_list.docx" );
+      var result = parser.Parse();
       Assert.Equal( File.ReadAllText( @"./md/unordered_list.md" ), result );
     }
+
   }
+
 }

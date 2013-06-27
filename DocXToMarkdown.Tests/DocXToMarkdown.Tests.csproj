@@ -63,7 +63,6 @@
     <Compile Include="DocumentAnalyzerTests.cs" />
     <Compile Include="ParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ParagraphConverterTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="docx\headers_and_lists.docx">
