@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using Novacode;
@@ -8,10 +9,23 @@ namespace DocXToMarkdown.Converter {
 
   public abstract class BaseConverter {
 
-    public BaseConverter( Paragraph p ) {
+    public BaseConverter( DocX d, Paragraph p ) {
       _paragraph = p;
+      _document = d;
       _text = Sanitize( _paragraph.Text );
       CheckHiperlinks();
+      CheckPictures();
+    }
+
+    private void CheckPictures() {
+      foreach( var picture in _paragraph.Pictures ) {
+        var imageSource = _document.Images.Find( i => i.FileName.Equals( picture.FileName ) );
+        var stream = imageSource.GetStream( System.IO.FileMode.Open, System.IO.FileAccess.Read );
+        using( var fs = new FileStream( "images/" + imageSource.FileName, FileMode.Create ) ) 
+          stream.CopyTo( fs );
+
+        _text += "![" + picture.Name + "](./images/" + imageSource.FileName + ")";
+      }
     }
 
     private void CheckHiperlinks() {
@@ -27,7 +41,8 @@ namespace DocXToMarkdown.Converter {
       return text.TrimStart( '\t' );
     }
 
-    protected Paragraph _paragraph;
+    protected readonly Paragraph _paragraph;
+    protected readonly DocX _document;
     protected string _text;
   }
 

@@ -5,7 +5,7 @@ namespace DocXToMarkdown.Converter {
 
   public class UnorderedList : BaseConverter {
 
-    public UnorderedList(Paragraph p ) : base( p )  { }
+    public UnorderedList( DocX d, Paragraph p ) : base( d, p )  { }
 
     public override string Convert() {
       return "* " + _text +Environment.NewLine;

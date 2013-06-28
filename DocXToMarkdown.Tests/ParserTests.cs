@@ -35,6 +35,13 @@ namespace DocXToMarkdown.Tests {
       Assert.Equal( File.ReadAllText( @"./md/unordered_list.md" ), result );
     }
 
+    [Fact]
+    public void Picture_ShouldParsePicture() {
+      var parser = new DocXParser( @"./docx/picture.docx" );
+      var result = parser.Parse();
+      Assert.Equal( "![Obraz 1](./images/image1.jpg)", result );
+    }
+
   }
 
 }

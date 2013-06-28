@@ -6,7 +6,7 @@ namespace DocXToMarkdown.Converter {
 
   public class P : BaseConverter {
 
-    public P(Paragraph p ) : base( p )  { }
+    public P( DocX d, Paragraph p ) : base( d, p )  { }
 
     public override string Convert() {
       if( String.IsNullOrWhiteSpace( _text ) ) return String.Empty;

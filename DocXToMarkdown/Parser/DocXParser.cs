@@ -24,31 +24,31 @@ namespace DocXToMarkdown.Parser {
       var sb = new StringBuilder();
       using( var doc = DocX.Load( _filename ) ) {
         foreach( var paragraph in doc.Paragraphs ) {
-          sb.Append( analyzeParagraph( paragraph ) );
+          sb.Append( analyzeParagraph( doc, paragraph ) );
         }
       }
 
       return sb.ToString().TrimEnd();
     }
 
-    private string analyzeParagraph( Paragraph paragraph ) {
-      var analyzer = createForParagraph( paragraph );
+    private string analyzeParagraph( DocX doc, Paragraph paragraph ) {
+      var analyzer = createForParagraph( doc, paragraph );
 
       return analyzer.Convert();
     }
 
-    private BaseConverter createForParagraph( Paragraph paragraph ) {
+    private BaseConverter createForParagraph( DocX doc, Paragraph paragraph ) {
       var isList = paragraph.IsListItem;
-      if( isList ) return createConverterForList( paragraph );
+      if( isList ) return createConverterForList( doc, paragraph );
 
       var type = Type.GetType( "DocXToMarkdown.Converter." + _converters[paragraph.StyleName] );
-      return (BaseConverter)Activator.CreateInstance( type, new[] { paragraph } );
+      return (BaseConverter)Activator.CreateInstance( type, new object[] { doc, paragraph } );
     }
 
-    private BaseConverter createConverterForList( Paragraph paragraph ) {
+    private BaseConverter createConverterForList( DocX doc, Paragraph paragraph ) {
       if( paragraph.ListItemType == ListItemType.Numbered )
-        return new OrderedList( paragraph );
-      else return new UnorderedList( paragraph ); 
+        return new OrderedList( doc, paragraph );
+      else return new UnorderedList( doc, paragraph ); 
     }
 
     private readonly string _filename;

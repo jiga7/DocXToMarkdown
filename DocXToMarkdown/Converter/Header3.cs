@@ -5,7 +5,7 @@ namespace DocXToMarkdown.Converter {
 
   public class Header3 : BaseConverter {
 
-    public Header3(Paragraph p ) : base( p )  { }
+    public Header3( DocX d, Paragraph p ) : base(d, p )  { }
 
     public override string Convert() {
       return "### " + _text + " ###" + Environment.NewLine + Environment.NewLine;
