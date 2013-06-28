@@ -1,6 +1,10 @@
 ﻿{
   'Nagwek1': 'Header1',
+  'Nagwek001': 'Header1',
   'Nagwek2': 'Header2',
   'Nagwek3': 'Header3',
+  'Nagwek4': 'Header4',
+  'Nagwek5': 'Header5',
+  'Nagwek6': 'Header6',
   'Normal': 'P',
 }

@@ -17,17 +17,16 @@ namespace DocXToMarkdown {
 
       if( "/analyze".Equals( command ) )
         analyze( args[1] );
-      if( "/parse".Equals( command ) )
+      if( "/convert".Equals( command ) )
         parse( args[1] );
-
-      Console.ReadKey();
     }
 
     private static void parse( string filename ) {
       var parser = new DocXParser( filename );
       var text = parser.Parse();
 
-      Console.WriteLine(text);
+      var file = Path.GetFileNameWithoutExtension( filename );
+      File.WriteAllText( file + ".md", text );
     }
 
     private static void analyze( string filename ) {
@@ -36,8 +35,8 @@ namespace DocXToMarkdown {
 
       analyzer.Analyze();
 
-      var json = JsonConvert.SerializeObject( analyzer.Result.ToDictionary( s => s, _ => "P" ), new JsonSerializerSettings { Formatting = Newtonsoft.Json.Formatting.Indented } );
-      Console.WriteLine(json);
+      var json = JsonConvert.SerializeObject( analyzer.Result, new JsonSerializerSettings { Formatting = Newtonsoft.Json.Formatting.Indented } );
+      Console.Write(json);
       var file = Path.GetFileNameWithoutExtension( filename );
       File.WriteAllText( file + ".json", json );
     }

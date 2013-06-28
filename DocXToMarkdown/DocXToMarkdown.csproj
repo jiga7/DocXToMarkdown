@@ -50,6 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converter\BaseConverter.cs" />
+    <Compile Include="Converter\Header6.cs" />
+    <Compile Include="Converter\Header5.cs" />
+    <Compile Include="Converter\Header4.cs" />
     <Compile Include="Converter\P.cs" />
     <Compile Include="Converter\UnorderedList.cs" />
     <Compile Include="Converter\OrderedList.cs" />
