@@ -39,7 +39,7 @@ namespace DocXToMarkdown.Tests {
     public void Picture_ShouldParsePicture() {
       var parser = new DocXParser( @"./docx/picture.docx" );
       var result = parser.Parse();
-      Assert.Equal( "![Obraz 1](./images/image1.jpg)", result );
+      Assert.Equal( "![Obraz 1](./picture_images/image1.jpg)", result );
     }
 
   }

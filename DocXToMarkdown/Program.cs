@@ -22,11 +22,17 @@ namespace DocXToMarkdown {
     }
 
     private static void parse( string filename ) {
+      makeImagesDirectory( filename );
       var parser = new DocXParser( filename );
       var text = parser.Parse();
 
       var file = Path.GetFileNameWithoutExtension( filename );
       File.WriteAllText( file + ".md", text );
+    }
+
+    private static void makeImagesDirectory( string filename ) {
+      var path = Path.GetFileNameWithoutExtension( filename ) + "_images";
+      if( !Directory.Exists( path ) ) Directory.CreateDirectory( path );
     }
 
     private static void analyze( string filename ) {
