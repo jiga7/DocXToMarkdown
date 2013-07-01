@@ -47,7 +47,7 @@ Avaliable converters:
  * OrderedList
  * UnorderedList
 
-Application will try do guess which style should be assigned to which
+Application will try to guess which style should be assigned to which
 converter, based on number and type, but you need to check its guess.
 
 When converters are assigned, the next phase is actual convert.
