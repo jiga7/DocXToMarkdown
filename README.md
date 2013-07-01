@@ -21,8 +21,8 @@ eg:
 `DocXToMarkdown.exe /analyze CV.docx`
 
 This call will produce the **CV.json** file, which contains all the
-different styles that document contains. This is the simple JSON object,
-where keys are the styles from document, and values are markdown
+different styles that document has. This is the simple JSON object,
+where keys are the styles from document and values are markdown
 elements, that the concrete style will be convert to.
 
 The file looks like this (keys are from polish version of Word 2013):
@@ -48,7 +48,7 @@ Avaliable converters:
  * UnorderedList
 
 Application will try do guess which style should be assigned to which
-converter, based on number and type, but You need to check its guess.
+converter, based on number and type, but you need to check its guess.
 
 When converters are assigned, the next phase is actual convert.
 
