@@ -20,9 +20,14 @@ namespace DocXToMarkdown.Converter {
     private void CheckPictures() {
       foreach( var picture in _paragraph.Pictures ) {
         var imageSource = _document.Images.Find( i => i.FileName.Equals( picture.FileName ) );
+
         var stream = imageSource.GetStream( System.IO.FileMode.Open, System.IO.FileAccess.Read );
         var filename = Path.GetFileNameWithoutExtension( Global.Filename );
-        using( var fs = new FileStream(  filename + "_images/" + imageSource.FileName, FileMode.Create ) ) 
+
+        var directory = filename + "_images/";
+        if( !Directory.Exists( directory ) ) Directory.CreateDirectory( directory );
+
+        using( var fs = new FileStream( directory + imageSource.FileName, FileMode.Create ) ) 
           stream.CopyTo( fs );
 
         _text += "![" + picture.Name + "](./" + filename + "_images/" + imageSource.FileName + ")";

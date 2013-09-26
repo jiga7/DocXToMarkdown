@@ -13,7 +13,7 @@ namespace DocXToMarkdown.Parser {
 
     public DocXParser() {
       var settings = Path.GetFileNameWithoutExtension( Global.Filename ) + ".json";
-      if( !File.Exists( settings ) ) settings = "settings.json";
+      if( !File.Exists( settings ) ) settings = Environment.CurrentDirectory + "/settings.json";
       _converters = JsonConvert.DeserializeObject<Dictionary<String, String>>( File.ReadAllText( settings ) );
     }
 
