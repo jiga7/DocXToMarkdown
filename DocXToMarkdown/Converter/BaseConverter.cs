@@ -21,7 +21,7 @@ namespace DocXToMarkdown.Converter {
       foreach( var picture in _paragraph.Pictures ) {
         var imageSource = _document.Images.Find( i => i.FileName.Equals( picture.FileName ) );
         var stream = imageSource.GetStream( System.IO.FileMode.Open, System.IO.FileAccess.Read );
-        var filename = Path.GetFileNameWithoutExtension(_document.Filename);
+        var filename = Path.GetFileNameWithoutExtension( Global.Filename );
         using( var fs = new FileStream(  filename + "_images/" + imageSource.FileName, FileMode.Create ) ) 
           stream.CopyTo( fs );
 

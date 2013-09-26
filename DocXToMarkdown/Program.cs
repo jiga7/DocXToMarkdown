@@ -10,40 +10,51 @@ using Novacode;
 
 namespace DocXToMarkdown {
 
+  public static class Global {
+    public static String Filename = String.Empty;
+  }
+
   class Program {
 
     static void Main( string[] args ) {
+      if( args.Length < 2 ) {
+        Console.WriteLine( @"Arguments are: <command> <filename> where <command> could be ""/analyze"" or ""/convert""" );
+        Environment.Exit( 1 );
+      }
+
       var command = args[0];
 
+      Global.Filename = args[1];
+
       if( "/analyze".Equals( command ) )
-        analyze( args[1] );
+        analyze();
       if( "/convert".Equals( command ) )
-        parse( args[1] );
+        parse();
     }
 
-    private static void parse( string filename ) {
-      makeImagesDirectory( filename );
-      var parser = new DocXParser( filename );
+    private static void parse() {
+      makeImagesDirectory();
+      var parser = new DocXParser();
       var text = parser.Parse();
 
-      var file = Path.GetFileNameWithoutExtension( filename );
+      var file = Path.GetFileNameWithoutExtension( Global.Filename );
       File.WriteAllText( file + ".md", text );
     }
 
-    private static void makeImagesDirectory( string filename ) {
-      var path = Path.GetFileNameWithoutExtension( filename ) + "_images";
+    private static void makeImagesDirectory() {
+      var path = Path.GetFileNameWithoutExtension( Global.Filename ) + "_images";
       if( !Directory.Exists( path ) ) Directory.CreateDirectory( path );
     }
 
-    private static void analyze( string filename ) {
-      var doc = DocX.Load( filename );
+    private static void analyze() {
+      var doc = DocX.Load( Global.Filename );
       var analyzer = new DocumentAnalyzer( doc );
 
       analyzer.Analyze();
 
       var json = JsonConvert.SerializeObject( analyzer.Result, new JsonSerializerSettings { Formatting = Newtonsoft.Json.Formatting.Indented } );
       Console.Write(json);
-      var file = Path.GetFileNameWithoutExtension( filename );
+      var file = Path.GetFileNameWithoutExtension( Global.Filename );
       File.WriteAllText( file + ".json", json );
     }
 

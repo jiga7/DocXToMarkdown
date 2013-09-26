@@ -11,18 +11,15 @@ namespace DocXToMarkdown.Parser {
 
   public class DocXParser {
 
-    public DocXParser( string filename ) {
-      _filename = filename;
-      var settings = Path.GetFileNameWithoutExtension( filename ) + ".json";
+    public DocXParser() {
+      var settings = Path.GetFileNameWithoutExtension( Global.Filename ) + ".json";
       if( !File.Exists( settings ) ) settings = "settings.json";
       _converters = JsonConvert.DeserializeObject<Dictionary<String, String>>( File.ReadAllText( settings ) );
     }
 
     public string Parse() {
-      if( String.IsNullOrWhiteSpace(_filename) ) return String.Empty;
-
       var sb = new StringBuilder();
-      using( var doc = DocX.Load( _filename ) ) {
+      using( var doc = DocX.Load( Global.Filename ) ) {
         foreach( var paragraph in doc.Paragraphs ) {
           sb.Append( analyzeParagraph( doc, paragraph ) );
         }
@@ -51,7 +48,6 @@ namespace DocXToMarkdown.Parser {
       else return new UnorderedList( doc, paragraph ); 
     }
 
-    private readonly string _filename;
     private readonly IDictionary<String, String> _converters;
   }
 
