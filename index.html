@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>DocXToMarkdown by soneta</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>DocXToMarkdown</h1>
+        <h2>App that converts DocX documents to markdown format.</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/soneta/DocXToMarkdown/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/soneta/DocXToMarkdown/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/soneta/DocXToMarkdown" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a name="docxtomarkdown" class="anchor" href="#docxtomarkdown"><span class="octicon octicon-link"></span></a>DocXToMarkdown</h1>
+
+<p>A proof-on-concept app that converts DocX documents to markdown format.
+Build upon an excellent library: <a href="http://docx.codeplex.com">DocX</a>. The lib included in repo had some little modification (built with the latest
+source). So at the moment it couldn't be replaced. </p>
+
+<h1>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
+
+<p>At the moment it needs to be compiled from sources.</p>
+
+<h1>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
+
+<p>The conversion process contains two phases:</p>
+
+<h3>
+<a name="analyze-phase" class="anchor" href="#analyze-phase"><span class="octicon octicon-link"></span></a>Analyze phase</h3>
+
+<p>You must run <strong>DocXToMarkdown.exe</strong> with the <em>/analyze</em> parameter,
+eg:</p>
+
+<p><code>DocXToMarkdown.exe /analyze CV.docx</code></p>
+
+<p>This call will produce the <strong>CV.json</strong> file, which contains all the
+different styles that document has. This is the simple JSON object,
+where keys are the styles from document and values are markdown
+elements, that the concrete style will be convert to.</p>
+
+<p>The file looks like this (keys are from polish version of Word 2013):</p>
+
+<div class="highlight highlight-json"><pre><span class="p">{</span>  
+    <span class="nt">"Nagwek1"</span><span class="p">:</span> <span class="s2">"Header1"</span><span class="p">,</span>  
+    <span class="nt">"Nagwek2"</span><span class="p">:</span> <span class="s2">"Header2"</span><span class="p">,</span>  
+    <span class="nt">"ordered_lista1"</span><span class="p">:</span> <span class="s2">"OrderedList"</span><span class="p">,</span>  
+<span class="p">}</span>  
+</pre></div>
+
+<p>Avaliable converters: </p>
+
+<ul>
+<li>Header1</li>
+<li>Header2</li>
+<li>Header3</li>
+<li>Header4</li>
+<li>Header5</li>
+<li>Header6</li>
+<li>P</li>
+<li>OrderedList</li>
+<li>UnorderedList</li>
+</ul><p>Application will try to guess which style should be assigned to which
+converter, based on number and type, but you need to check its guess.</p>
+
+<p>When converters are assigned, the next phase is actual convert.</p>
+
+<h3>
+<a name="convert-phase" class="anchor" href="#convert-phase"><span class="octicon octicon-link"></span></a>Convert phase</h3>
+
+<p>You must run <strong>DocXToMarkdown.exe</strong> with the <em>/convert</em> parameter,
+eg:</p>
+
+<p><code>DocXToMarkdown.exe /convert CV.docx</code></p>
+
+<p>It will produce multiple files:</p>
+
+<ul>
+<li>CV.md - actual markdown code</li>
+<li>CV_images/*.jpg - directory that contains images</li>
+</ul><p>Thats all :)</p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
