@@ -6,7 +6,7 @@ Build upon an excellent library: [DocX](http://docx.codeplex.com).
 
 # Installation #
 
-Download latest release archive file. It contains all necessary files. It must be run from commandline.
+Download latest release [archive file](https://github.com/soneta/DocXToMarkdown/releases/download/v0.1/DocXToMarkdown.zip). It contains all necessary files. It must be run from commandline.
 
 # Usage #
 
