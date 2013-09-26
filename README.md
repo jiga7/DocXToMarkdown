@@ -2,12 +2,11 @@ DocXToMarkdown
 ==============
 
 A proof-on-concept app that converts DocX documents to markdown format.
-Build upon an excellent library: [DocX](http://docx.codeplex.com). The lib included in repo had some little modification (built with the latest
-source). So at the moment it couldn't be replaced. 
+Build upon an excellent library: [DocX](http://docx.codeplex.com).
 
 # Installation #
 
-At the moment it needs to be compiled from sources.
+Download latest release archive file. It contains all necessary files. It must be run from commandline.
 
 # Usage #
 
